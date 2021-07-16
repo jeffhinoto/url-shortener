@@ -23,7 +23,8 @@ router.get('/:code', async (req, res, next) => {
   ]
 
   let i = Math.random() * (ads.length -1);
-
+    console.log(i)
+    console.log(ads[i])
   res.render('redirect', { title: 'Encurtador', url: resultado.url, ad: ads[i] });
   //res.redirect(resultado.url);
 })
