@@ -17,8 +17,8 @@ router.get('/:code', async (req, res, next) => {
 
   resultado.hits++;
   await resultado.save();
-
-  res.redirect(resultado.url);
+  res.render('redirect', { title: 'Encurtador', url: resultado.url });
+  //res.redirect(resultado.url);
 })
 
 /* GET home page. */
