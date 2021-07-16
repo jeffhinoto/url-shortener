@@ -17,7 +17,14 @@ router.get('/:code', async (req, res, next) => {
 
   resultado.hits++;
   await resultado.save();
-  res.render('redirect', { title: 'Encurtador', url: resultado.url });
+  let ads = [
+    'https://affiliate.iqbroker.com/redir/?aff=267400&instrument=options&aff_model=cpa',
+    'https://www.rivalry.com/pt/match/league-of-legends/champions-korea/377523-afreeca-freecs-vs-fredit-brion'
+  ]
+
+  let i = Math.random() * (ads.length -1);
+
+  res.render('redirect', { title: 'Encurtador', url: resultado.url, ad: ads[i] });
   //res.redirect(resultado.url);
 })
 
