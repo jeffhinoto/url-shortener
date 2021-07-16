@@ -24,7 +24,7 @@ router.get('/:code', async (req, res, next) => {
     'https://www.youtube.com/watch?v=FNKPYhXmzoE&list=RDMM&index=9'
   ]
 
-  let i = Math.floor(Math.random() * (ads.length -1));
+  let i = Math.floor(Math.random() * (ads.length));
     console.log(i)
     console.log(ads[i])
   res.render('redirect', { title: 'Encurtador', url: resultado.url, ad: ads[i] });
