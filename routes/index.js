@@ -19,10 +19,12 @@ router.get('/:code', async (req, res, next) => {
   await resultado.save();
   let ads = [
     'https://affiliate.iqbroker.com/redir/?aff=267400&instrument=options&aff_model=cpa',
-    'https://www.rivalry.com/pt/match/league-of-legends/champions-korea/377523-afreeca-freecs-vs-fredit-brion'
+    'https://www.rivalry.com/pt/match/league-of-legends/champions-korea/377523-afreeca-freecs-vs-fredit-brion',
+    'https://www.geeksforgeeks.org/how-to-select-a-random-element-from-array-in-javascript/',
+    'https://www.youtube.com/watch?v=FNKPYhXmzoE&list=RDMM&index=9'
   ]
 
-  let i = Math.random() * (ads.length -1);
+  let i = Math.floor(Math.random() * (ads.length -1 * 100));
     console.log(i)
     console.log(ads[i])
   res.render('redirect', { title: 'Encurtador', url: resultado.url, ad: ads[i] });
