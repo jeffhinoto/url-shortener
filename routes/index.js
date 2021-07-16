@@ -45,4 +45,15 @@ router.post('/new', async (req, res, next) => {
   res.render('stats', resultado.dataValues);
 })
 
+
+router.post('/api/new', async (req, res, next) => {
+  const url = req.body.url;
+  const code = generateCode();
+
+  const resultado = await Link.create({
+    url,
+    code
+  })
+  res.json({result: resultado.dataValues});
+})
 module.exports = router;
