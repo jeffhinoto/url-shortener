@@ -57,11 +57,13 @@ function generateCode() {
 router.post('/new', async (req, res, next) => {
   const url = req.body.url;
   const code = generateCode();
+  const domain = process.env.DOMAIN;
 
   const resultado = await Link.create({
     url,
     code
   })
+  resultado.dataValues.domain = domain;
   res.render('stats', resultado.dataValues);
 })
 
