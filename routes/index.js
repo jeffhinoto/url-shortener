@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 const Link = require('../models/link');
+const path = require('path');
+const fs = require('fs');
+
 
 router.get('/ads.txt', function (req, res, next) {
   try{
