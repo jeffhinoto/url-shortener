@@ -2,6 +2,16 @@ var express = require('express');
 var router = express.Router();
 const Link = require('../models/link');
 
+router.get('/ads.txt', function (req, res, next) {
+  try{
+    let data = fs.readFileSync(path.join(__dirname, 'ads.txt'), 'utf8');
+    return res.attachment("ads.txt").send(data)
+} catch(err) {
+    console.log(err)
+    return res.sendStatus(403);
+}
+});
+
 router.get('/:code/stats', async (req, res, next) => {
   const code = req.params.code;
   const resultado = await Link.findOne({ where: { code } });
@@ -36,15 +46,7 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Encurtador' });
 });
 
-router.get('/ads.txt', function (req, res, next) {
-  try{
-    let data = fs.readFileSync(path.join(__dirname, 'ads.txt'), 'utf8');
-    return res.attachment("ads.txt").send(data)
-} catch(err) {
-    console.log(err)
-    return res.sendStatus(403);
-}
-});
+
 
 function generateCode() {
   let text = '';
