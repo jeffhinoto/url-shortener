@@ -36,6 +36,16 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Encurtador' });
 });
 
+router.get('/ads.txt', function (req, res, next) {
+  try{
+    let data = fs.readFileSync(path.join(__dirname, 'ads.txt'), 'utf8');
+    return res.attachment("ads.txt").send(data)
+} catch(err) {
+    console.log(err)
+    return res.sendStatus(403);
+}
+});
+
 function generateCode() {
   let text = '';
   const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
