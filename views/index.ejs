@@ -59,6 +59,10 @@
           <input placeholder="Digite a URL a ser encurtada" name="url" class="form-control" />
           <div class="input-group-append">
             <button class="btn btn-primary" type="submit">Encurtar</button>
+            <div class="alert alert-dismissible alert-success">
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+              <strong>Boa!</strong> Seu link<a href="<%= url %>" class="alert-link">foi encurtado com sucesso!</a>.
+            </div>
           </div>
         </div>
       </form>
