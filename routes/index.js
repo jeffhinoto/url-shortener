@@ -50,6 +50,9 @@ router.get('/', function (req, res, next) {
 });
 
 
+setTimeout(function() {
+  window.location.reload(1);
+}, 10000);
 
 function generateCode() {
   let text = '';
