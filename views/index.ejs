@@ -51,19 +51,15 @@
   </nav>
   <div class="container">
     <div class="header">
-      <img src="https://i.imgur.com/Tg4eW6x.png" alt="<%= title %>" style="width: 75%; margin: 0 auto;"/>
+      <img src="https://i.imgur.com/Tg4eW6x.png" alt="<%= title %>" style="width: 40%; margin: 0 auto;"/>
     </div>
     <div class="content">
       <form method="POST" action="/new">
         <div class="mb-3 input-group">
-          <div class="form-group has-success">
-            <input type="text" value="Link a ser encurtado" class="form-control is-valid" id="inputValid">
-            <div class="valid-feedback">Maravilha!</div>
-
+          <input placeholder="Digite a URL a ser encurtada" name="url" class="form-control" />
           <div class="input-group-append">
-            <button type="button" class="btn btn-primary btn-lg">Encurtar</button>
+            <button class="btn btn-primary" type="submit">Encurtar</button>
           </div>
-        </div>
         </div>
       </form>
     </div>
