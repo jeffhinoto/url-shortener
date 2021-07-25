@@ -31,10 +31,7 @@ router.get('/:code', async (req, res, next) => {
   resultado.hits++;
   await resultado.save();
   let ads = [
-    'https://affiliate.iqbroker.com/redir/?aff=267400&instrument=options&aff_model=cpa',
-    'https://www.rivalry.com/pt/match/league-of-legends/champions-korea/377523-afreeca-freecs-vs-fredit-brion',
-    'https://www.geeksforgeeks.org/how-to-select-a-random-element-from-array-in-javascript/',
-    'https://www.youtube.com/watch?v=FNKPYhXmzoE&list=RDMM&index=9'
+    'https://meuvicioerock.blogspot.com/#popup'
   ]
 
   let i = Math.floor(Math.random() * (ads.length));
