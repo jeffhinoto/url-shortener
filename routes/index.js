@@ -31,7 +31,7 @@ router.get('/:code', async (req, res, next) => {
   resultado.hits++;
   await resultado.save();
   let ads = [
-    'https://meuvicioerock.blogspot.com/#popup'
+    'https://meuvicioerock.blogspot.com/2013/10/#popup'
   ]
 
   let i = Math.floor(Math.random() * (ads.length));
